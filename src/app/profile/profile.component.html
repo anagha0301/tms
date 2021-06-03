@@ -1,0 +1,147 @@
+<div class="wrapper d-flex align-items-stretch">
+    <nav *ngIf='showImage' id="sidebar">
+   
+        <div class="img bg-wrap text-center py-4" style="background-image: url(images/bg_1.jpg);">
+          <div class="user-logo">
+            <div class="img" style="background-image: url(images/logo.jpg);"></div>
+            <!-- <h3>Catriona Henderson</h3> -->
+            <h3>Dashboard</h3>
+          </div>
+        </div>
+        <ul class="list-unstyled components mb-5">
+          <li><a routerLink=""><span class="fa fa-home mr-3"></span> Home</a>
+          </li>
+    
+          <li>
+            <a routerLink="/enrollment" *ngIf="_auth.loggedIn()" (click)="loggedUser()">
+              <span class="fa fa-gift mr-3"></span>Enrollment Form</a>
+          </li>
+          <li>
+            <a routerLink="/profile" *ngIf="_auth.loggedIn()" ><span class="fa fa-trophy mr-3"></span>Profile</a>
+          </li>
+    
+          <li>
+            <a routerLink="/calender" *ngIf="_auth.loggedIn()" ><span class="fa fa-support mr-3"></span>Calender</a>
+          </li>
+          <li>
+            <a style="cursor:pointer" *ngIf="_auth.loggedIn()" (click)="logoutUser()"><span class="fa fa-sign-out mr-3"></span> Sign Out</a>
+          </li>
+        </ul>
+    
+      </nav>
+    
+    
+    <!-- Page Content begins  -->
+    <div id="content" class="p-4 p-md-5 pt-5">
+      <h3 class="mt-4 ml-5 mb-4" style="font-weight: bold;">Profile</h3>
+      <div class="container">
+        <div class="main-body">
+  
+       
+  
+          <div class="row gutters-sm">
+  
+            <div class="col-md-12">
+              <div class="card mb-3">
+                <div class="card-body">
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Full Name:</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                      Kenneth Valdez
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Trainer ID:</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                      Kenneth Valdez
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                      <div class="col-sm-3">
+                        <h6 class="mb-0">Employee Type:</h6>
+                      </div>
+                      <div class="col-sm-9 text-secondary">
+                       Temporary
+                      </div>
+                    </div>
+                    <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Email:</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                      fip@jukmuh.al
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Phone:</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                      (239) 816-9029
+                    </div>
+                  </div>
+                  <hr>
+  
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Address:</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                      Bay Area, San Francisco, CA
+                    </div>
+                  </div>
+                  <hr>
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Highest Qualification:</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                      Btech
+                    </div>
+                  </div>
+                  <hr>
+                 
+                  
+                 
+                  
+                  <div class="row">
+                    <div class="col-sm-3">
+                      <h6 class="mb-0">Course Name:</h6>
+                    </div>
+                    <div class="col-sm-9 text-secondary">
+                 Certified full stack Development
+                    </div>
+                  </div>
+                  <hr>
+                  
+                  
+                  
+                  <hr>
+                </div>
+              </div>
+  
+          
+  
+  
+  
+            </div>
+          </div>
+  
+        </div>
+      </div>
+  
+  
+  
+  
+    </div>
+    <!--page content ends-->
+  </div>
+  

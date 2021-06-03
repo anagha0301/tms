@@ -1,0 +1,195 @@
+<!-- <app-header></app-header> -->
+
+<div class="wrapper d-flex align-items-stretch">
+    
+    
+    <nav  id="sidebar">
+        <div class="custom-menu">
+         
+         
+        </div>
+        <div class="img bg-wrap text-center py-4" style="background-image: url(images/bg_1.jpg);">
+          <div class="user-logo">
+            <div class="img" style="background-image: url(images/logo.jpg);"></div>
+            <h3>Dashboard</h3>
+          </div>
+        </div>
+        <ul class="list-unstyled components mb-5">
+          <li><a routerLink="/admindashboard" *ngIf="_AdminService.loggedIn()" (click)="loggedUser()"><span class="fa fa-home mr-3"></span> Home</a>
+          </li>
+    
+          <li>
+            <a routerLink="/applicationlist">
+              <span class="fa fa-gift mr-3" *ngIf="_AdminService.loggedIn()"></span>Application List</a>
+          </li>
+          <li>
+            <a routerLink="/approvedlist" *ngIf="_AdminService.loggedIn()"><span class="fa fa-trophy mr-3"></span>Approved List</a>
+          </li>
+    
+          <!-- <li>
+            <a routerLink="/Allocatedlist" *ngIf="_AdminService.loggedIn()"><span class="fa fa-support mr-3"></span>Allocated List</a>
+          </li> -->
+          <li>
+            <a style="cursor:pointer" *ngIf="_AdminService.loggedIn()" (click)="logoutUser()"><span class="fa fa-sign-out mr-3"></span> Sign Out</a>
+          </li>
+        </ul>
+    
+      </nav>
+    
+  
+    <!-- Page Content begins  -->
+    
+    <div class="container-fluid px-1 px-md-5 px-lg-1 px-xl-5 py-5 mx-auto">
+      <button class='btn btn-secondary'
+      (click)='toggleImage()'>
+        {{showImage? '<' : '>'}} 
+      </button>
+      <div class="card card0 border-0">
+        <div class="row d-flex">
+  
+         
+  
+  
+          <div class=" border-0 px-4 py-5" id="enroll">
+            <!-- card2 card -->
+            <div class="container">
+              <h1 class="login">Approval Form</h1>
+              <!--class="mb-0 mr-4 mt-2"-->
+  
+  
+              <br>
+              <!-- Enroll Form -->
+  
+              <form (ngSubmit)="approve()">
+  
+                <br>
+                <h3 class="mt-4 ml-5 mb-4" style="font-weight: bold;">Personal Information</h3>
+                <div class="row px-5 inpbox"> <label class="mb-1">
+                    <h6 class="mb-0 text-sm">Name:*</h6>
+                  </label> <input class="mb-4" type="text" name="name" [(ngModel)]="trainerItem.name" >
+                </div>
+                <div class="row px-5 inpbox"> <label class="mb-1">
+                    <h6 class="mb-0 text-sm">Email Address:*</h6>
+                  </label> <input class="mb-4" type="text" name="email"  [(ngModel)]="trainerItem.email" >
+                </div>
+                <div class="row px-5 inpbox"> <label class="mb-1">
+                    <h6 class="mb-0 text-sm">Phone Number:*</h6>
+                  </label> <input type="text" name="phone"   [(ngModel)]="trainerItem.phone">
+                </div>
+                <br>
+                <div class="row px-5 inpbox"> <label class="mb-1">
+                    <h6 class="mb-0 text-sm">Address:*</h6>
+                  </label> <input class="mb-4" type="textarea" name="address" [(ngModel)]="trainerItem.address" >
+                </div>
+  
+                
+                <br>
+                <h3 class="mt-4 ml-5 mb-4" style="font-weight: bold;">Educational/Job Information</h3>
+                <br>
+                <div class="row px-5">
+                  <label class="mb-1">
+                    <h6 class="mb-0 text-sm">Highest Qualification:*</h6>
+                  </label>
+                  <input class="mb-4" type="textarea" name="qualification" [(ngModel)]="trainerItem. qualification" >
+                  <!-- <select class="form-select form-select-sm user-sel"  [(ngModel)]="applicationlist.qualification" aria-label=".form-select-sm example">
+                    <option selected>Select</option>
+                    <option value="BE">B.Tech/BE</option>
+                    <option value="ME">M.Tech/ME</option>
+                    <option value="BCA">BCA</option>
+                    <option value="MCA">MCA</option>
+                    <option value="others">Others</option>
+                  </select> -->
+                </div>
+  
+                <br>
+                <div class="row px-5 inpbox"> <label class="mb-1">
+                    <h6 class="mb-0 text-sm">Skill Set:*</h6>
+                  </label> <input type="text" name="skillset"  [(ngModel)]="trainerItem.skillset"  >
+                </div>
+                <br>
+                <div class="row px-5 inpbox"> <label class="mb-1">
+                    <h6 class="mb-0 text-sm">Current Company Name:*</h6>
+                  </label> <input type="text" name="current"  [(ngModel)]="trainerItem.current" >
+                </div>
+                <br>
+                <div class="row px-5 inpbox"> <label class="mb-1">
+                    <h6 class="mb-0 text-sm">Current Designation:*</h6>
+                  </label> <input type="text" name="designation"  [(ngModel)]="trainerItem.designation" >
+                </div>
+                <br>
+                <div class="row px-5">
+                  <label class="mb-1">
+                    <h6 class="mb-0 text-sm">ICTAK Course Handling:*</h6>
+                  </label>
+                  <!-- <select class="form-select form-select-sm user-sel"  [(ngModel)]="applicationlist.appliedcourse"  aria-label=".form-select-sm example">
+                    <option selected>Select</option>
+                    <option value="FSD">Certified Specialist in Full Stack Development</option>
+                    <option value="RPA">Robotic process automation</option>
+                    <option value="CSA">Cyber Security Analyst</option>
+                    <option value="XLP">XR-Learning Path</option>
+                    <option value="DSA">Certified Specialist in Data Science & Analytics</option>
+                    <option value="RPA">Robotic process automation</option>
+                    <option value="DM">Digital Marketing</option>
+                  </select> -->
+                  <input class="mb-4" type="textarea" name="appliedcourse" [(ngModel)]="trainerItem.appliedcourse"  value={{trainerItem.appliedcourse}}>
+                </div>
+                <br>
+                <div class="row px-5 inpbox"> <label class="mb-1">
+                    <h3 class="mb-0 text-sm">Type Of Employment:*</h3>
+                  </label> <select class="form-select form-select-sm user-sel" name="typemp" [(ngModel)]="trainerItem.typemp"  aria-label=".form-select-sm example">
+                   
+                    <option value="Internal Trainer">Internal Trainer</option>
+                    <option value="Empanelled Trainer">Empanelled Trainer</option>
+                    <option value="Industry Expert">Industry Expert</option>
+                   
+                  </select>
+                </div>
+                <br>
+  
+                <div class="btn-group">
+  
+                  <div class="row mb-3 px-3">
+                    <!-- <a routerLink="/submitsuccess"> -->
+                      <button type="submit" value="Submit" class="btn btn-success text-center">Approve</button> </div>
+                  <div class="row mb-3 px-3">
+                    <a routerLink="/">
+                      <button type="submit" class="btn btn-secondary text-center">Cancel</button>
+                    </a>
+                     </div>
+                </div>
+              </form>
+              <!-- End of Enroll form -->
+            </div>
+          </div>
+        </div>
+  
+  
+  
+  
+      </div>
+    </div>
+    <!--page content ends-->
+  </div>
+  
+  <!-- <script src="js/jquery.min.js"></script>
+  <script src="js/popper.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    var stepper2Node = document.querySelector('#stepper2')
+    var stepper2 = new Stepper(document.querySelector('#stepper2'), {
+      linear: false,
+      animation: true
+    })
+  
+    stepper2Node.addEventListener('show.bs-stepper', function (event) {
+      console.warn('show.bs-stepper', event)
+    })
+    stepper2Node.addEventListener('shown.bs-stepper', function (event) {
+      console.warn('shown.bs-stepper', event)
+    })
+  
+  </script>
+  <script src="node_modules/bs-stepper/dist/js/bs-stepper.js"></script>
+  
+   -->

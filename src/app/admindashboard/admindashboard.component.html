@@ -1,0 +1,94 @@
+<!-- <app-admin-header></app-admin-header> -->
+<div class="wrapper d-flex align-items-stretch">
+ 
+    <nav *ngIf='showImage' id="sidebar">
+      <div class="custom-menu">
+       
+       
+      </div>
+      <div class="img bg-wrap text-center py-4" style="background-image: url(images/bg_1.jpg);">
+        <div class="user-logo">
+          <div class="img" style="background-image: url(images/logo.jpg);"></div>
+          <h3>Dashboard</h3>
+        </div>
+      </div>
+      <ul class="list-unstyled components mb-5">
+        <li><a routerLink="/admindashboard" *ngIf="_AdminService.loggedIn()" (click)="loggedUser()"><span class="fa fa-home mr-3"></span> Home</a>
+        </li>
+  
+        <li>
+          <a routerLink="/applicationlist">
+            <span class="fa fa-gift mr-3" *ngIf="_AdminService.loggedIn()"></span>Application List</a>
+        </li>
+        <li>
+          <a routerLink="/approvedlist" *ngIf="_AdminService.loggedIn()"><span class="fa fa-trophy mr-3"></span>Approved List</a>
+        </li>
+  
+        <!-- <li>
+          <a routerLink="/Allocatedlist" *ngIf="_AdminService.loggedIn()"><span class="fa fa-support mr-3"></span>Allocated List</a>
+        </li> -->
+        <li>
+          <a style="cursor:pointer" *ngIf="_AdminService.loggedIn()" (click)="logoutUser()"><span class="fa fa-sign-out mr-3"></span> Sign Out</a>
+        </li>
+      </ul>
+  
+    </nav>
+  
+    <!-- Page Content begins  -->
+    
+    <div id="content" class="p-4 p-md-5 pt-5">
+      <!-- <button class='btn btn-secondary'
+      (click)='toggleImage()'>
+        {{showImage? '<' : '>'}} 
+      </button> -->
+      <br>
+      <div class='card'>
+        <div class='card-header'>
+          <h3 class="mt-4 ml-5 mb-4" style="font-weight: bold;">Welcome Admin!!</h3>
+        </div>
+  
+        <!-- <div class='card-body'>
+          <div class='table-responsive'>
+            <table class='table'>
+  
+              <thead>
+                <tr>
+                  
+                  <th>Assign</th>
+                  <th>Name</th>
+                  <th>Email</th>
+                  <th>Phone</th>
+                  <th>Address</th>
+                  <th>Qualification</th>
+                  <th>Skillset</th>
+                  <th>Current Company</th>
+                  <th>Current Designation</th>
+                  <th>Applied Course</th>
+                  
+                </tr>
+  
+              </thead>
+              <tbody>
+                <tr *ngFor='let list of applicationlist '>
+                  <td><button (click)="singlelist(list)" >Approve</button></td>
+                  <td>{{ list.name}}</td>
+                  <td>{{ list.email }}</td>
+                  <td>{{ list.phone }}</td>
+                  <td>{{ list.address }}</td>
+                  <td>{{ list.qualification }}</td>
+                  <td>{{ list.skillset }}</td>
+                  <td>{{ list.current }}</td>
+                  <td>{{ list.designation }}</td>
+                  <td>{{ list.appliedcourse }}</td>l
+                
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div> -->
+      </div>
+  
+    </div>
+    <!--page content ends-->
+  </div>
+  

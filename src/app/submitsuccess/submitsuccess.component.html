@@ -1,0 +1,54 @@
+<div class="wrapper d-flex align-items-stretch">
+  <nav *ngIf='showImage' id="sidebar">
+   
+    <div class="img bg-wrap text-center py-4" style="background-image: url(images/bg_1.jpg);">
+      <div class="user-logo">
+        <div class="img" style="background-image: url(images/logo.jpg);"></div>
+        <!-- <h3>Catriona Henderson</h3> -->
+        <h3>Dashboard</h3>
+      </div>
+    </div>
+    <ul class="list-unstyled components mb-5">
+      <li><a routerLink=""><span class="fa fa-home mr-3"></span> Home</a>
+      </li>
+
+      <li>
+        <a routerLink="/enrollment" *ngIf="_auth.loggedIn()" (click)="loggedUser()">
+          <span class="fa fa-gift mr-3"></span>Enrollment Form</a>
+      </li>
+      <li>
+        <a routerLink="/profile" *ngIf="_auth.loggedIn()" ><span class="fa fa-trophy mr-3"></span>Profile</a>
+      </li>
+
+      <li>
+        <a routerLink="/calender" *ngIf="_auth.loggedIn()" ><span class="fa fa-support mr-3"></span>Calender</a>
+      </li>
+      <li>
+        <a style="cursor:pointer" *ngIf="_auth.loggedIn()" (click)="logoutUser()"><span class="fa fa-sign-out mr-3"></span> Sign Out</a>
+      </li>
+    </ul>
+
+  </nav>
+
+
+    <!-- Page Content begins  -->
+    <div  id="content" class="p-4 p-md-5 pt-5">
+      <button class='btn btn-secondary'
+      (click)='toggleImage()'>
+        {{showImage? '<' : '>'}} 
+      </button>
+      <div style="background-color:rgb(41, 37, 37);" class="jumbotron text-center">
+        <h1 style="color:whitesmoke" class="display-3">Thank You!</h1>
+        <p style="color:whitesmoke"  class="lead"><strong>Please check your email</strong> for further instructions on how to complete your account setup.</p>
+        <hr style="color: white;">
+        <p>
+          Having trouble? <a href="">Contact us</a>
+        </p>
+        <p class="lead">
+          <a class="btn btn-primary btn-sm" href="#" role="button">Continue to homepage</a>
+        </p>
+      </div>
+    </div>
+    <!--page content ends-->
+  </div>
+  
